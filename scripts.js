@@ -15,9 +15,7 @@ images.forEach((img, idx) => {
     }
 })
 
-next.addEventListener("click", _ => {
-
-    // Make the current img invisible, store the index
+function getIdx(){
     for (var i=0; i<images.length; i++) {
         if (images[i].style.display === "block"){
             images[i].style.display = "none";
@@ -25,7 +23,12 @@ next.addEventListener("click", _ => {
             break;
         }
     }
-    
+    return idx;
+}
+
+next.addEventListener("click", _ => {
+    // Make the current img invisible, return the index
+    var idx = getIdx();
     // Make img visible if current index is bigger than stored idx
     if (idx+1 === images.length){
         images[0].style.display = "block";
@@ -37,21 +40,12 @@ next.addEventListener("click", _ => {
 
 
 prev.addEventListener("click", _ => {
-
-    // Make the current img invisible, store the index
-    for (var i=0; i<images.length; i++) {
-        if (images[i].style.display === "block"){
-            images[i].style.display = "none";
-            var idx = i;
-            break;
-        }
-    }
-    
+    // Make the current img invisible, return the index
+    var idx = getIdx();
     // Make img visible if current index is bigger than stored idx
     if (idx === 0){
         images[images.length-1].style.display = "block";
     } else {
         images[idx-1].style.display = "block";   
     }
-
 }, false);

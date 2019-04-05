@@ -1,0 +1,41 @@
+body {
+    background: lightgray;
+}
+
+.image-carousel {
+    background: white;
+}
+
+
+/* Image Carousel styling */
+
+.image-carousel {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 200px;
+    max-height: 420px;
+    max-width: 640px;
+    min-width: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-carousel img {
+    min-height: inherit;
+    max-height: inherit;
+    max-width: inherit;
+    min-width: inherit;
+}
+
+.next, .previous {
+    position: absolute;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+}
+
+.previous {left: 0;}
+.next:hover {content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill:white;' viewBox='0 0 24 24'%3E%3Cpath d='M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z'/%3E%3C/svg%3E");}
+.previous:hover {content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill:white;' viewBox='0 0 24 24'%3E%3Cpath d='M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z'/%3E%3C/svg%3E");}
